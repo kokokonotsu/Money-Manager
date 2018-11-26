@@ -14,7 +14,7 @@
     <h1>Money Manager</h1>
   </header>
 <main class="main-container main-grid">
-<p><a href="create.php" id="add-task-link">Add Expense</a></p>
+<input type="button" name="create-expense-modal-button" id="create-expense-modal-button" value="Add Expense">
 <?php
 //Call for Database Connection
 db();
