@@ -10,6 +10,19 @@
   <link rel="stylesheet" type="text/css" media="screen" href="Assets/styles.css" />
 </head>
 <body class="grid-index">
+  <div id="expense-modal" class="modal">
+    <div class="modal-content">
+      <h1>Add Expense Form</h1>
+      <form action="" method="post">
+        <input type="text" name="expenseTitle" id="expenseTitleInput">
+        <input type="text-area" name="expenseDescription" id="expenseDescriptionInput">
+        <input type="text" name="expenseTotal" id="expenseTotalInput">
+        <input type="time" name="expenseTime" id="expenseTimeInput">
+        <input type="date" name="expenseDate" id="expenseDateInput">
+        <input type="submit" name="expense-submit" id="expense-submit-button">
+      </form>
+    </div>
+  </div>
   <header>
     <h1>Money Manager</h1>
   </header>
