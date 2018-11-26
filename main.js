@@ -12,3 +12,10 @@ window.addEventListener("click", (event) => { if(event.target == expenseModal){ 
 var incomeModal = document.getElementById("income-modal");
 var incomeModalButton = document.getElementById("create-income-modal-button");
 var incomeClose = document.getElementById("income-close");
+
+//Add Event Listener for whenever user clicks "Add Income" button
+incomeModalButton.addEventListener("click", () => { incomeModal.style.display = "block"; });
+//Add Event Listener for whenever user clicks the close button
+incomeClose.addEventListener("click", () => {incomeModal.style.display = "none"; });
+//Add Event Listener for whenever user clicks outside of the modal content to close modal
+window.addEventListener("click", (event) => { if(event.target == incomeModal){ incomeModal.style.display = "none"; }; });
