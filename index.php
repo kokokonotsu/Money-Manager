@@ -11,32 +11,31 @@
 </head>
 <body class="grid-index">
   <header>
-    <h1>My Tasks</h1>
+    <h1>Money Manager</h1>
   </header>
 <main class="main-container main-grid">
-<p><a href="create.php" id="add-task-link">Add Task To To-Do List</a></p>
+<p><a href="create.php" id="add-task-link">Add Expense</a></p>
 <?php
 //Call for Database Connection
 db();
 //Assign returned connection variable to global variable instance
 global $link;
-$query = "SELECT id, todoTitle, todoDescription, time, date FROM todo";
+$query = "SELECT id, expenseTitle, expenseDescription, expenseTime, expenseDate, balanceAfterExpense FROM expense";
 $result = mysqli_query($link, $query);
 if(mysqli_num_rows($result) >= 1){
   while($row = mysqli_fetch_array($result)){
     $id =$row["id"];
-    $title = $row["todoTitle"];
-    $time = $row["time"];
-    $date = $row["date"];
+    $title = $row["expenseTitle"];
+    $time = $row["expenseTime"];
+    $date = $row["expenseDate"];
+    $expense = $row["balanceAfterExpense"];
     ?>
     <ul>
       <li>
-      <form action="" method="post" class="cross-out-form">
-        <input type="submit" class="cross-out-button" name="cross-out-button" value="&#x2714;">
-      </form>
-      <a href="detail.php?id=<?php echo $id?>" class="task-title"><?php echo "$title "?></a>
-      <span><?php echo "[ $time ]" ?></span>
-      <span><?php echo "[[ $date ]]";?></span>
+      <a href="detail.php?id=<?php echo $id?>" class="task-title"><?php echo "$title"?></a>
+      <span><?php echo "[$time]";?></span>
+      <span><?php echo "[$date]";?></span>
+      <span><?php echo "\$$expense";?>
       <button type="button" class="edit-button"><a href="update.php?id=<?php echo $id?>"><i class="fas fa-pen"></i></a></button>
       <button type="button"><a href="delete.php?id=<?php echo $id?>"><i class="fas fa-times"></i></a></button>
       </li>
