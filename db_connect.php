@@ -2,11 +2,11 @@
 function db(){
     global $link;
     $link = mysqli_connect("localhost", "root", "", "money_manager");
-    return link;
+    return $link;
 }
 if(db()){
-    print "Connection Successful";
+    echo "<footer>Connection Successful</footer>";
 } else {
-    print "Connection Unsuccessful";
+    echo "<footer>Connection Unsuccessful</footer>";
 }
 ?>
