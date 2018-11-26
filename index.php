@@ -90,7 +90,7 @@ if(mysqli_num_rows($result) >= 1){
 ?>
 </main>
 </body>
-<script src="todo-script.js"></script>
+<script src="main.js"></script>
 <script>
 if(window.history.replaceState){
   window.history.replaceState(null, null, window.location.href);
