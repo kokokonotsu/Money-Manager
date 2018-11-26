@@ -253,18 +253,38 @@ header h1{
 }
 /* Modal Content */
 .modal-content{
+    position: relative;
     background-color: black;
-    margin: 15% auto; /* Will keep modal 15% of screen height from the top, an center it via auto margin-sides */
-    padding: 20px;
+    margin: 10% auto auto auto; /* Will keep modal 15% of screen height from the top, an center it via auto margin-sides */
+    padding: 0;
     border: 1px solid #32CD32;
     width: 80%;
+}
+/* Modal Header */
+.modal-header{
+    border: 1px solid #32CD32;
+}
+.modal-header h1{
+    margin: 0;
+}
+/* Modal Body*/
+.modal-body{
+    font-size: 2rem;
+}
+.modal-body form input{
+    font-size: 2rem;
+    font-family: "px-vga", 'Courier New', Courier, monospace;
+    background-color: black;
+    border: 1px solid #32CD32;
+    caret-color: #32CD32;
+    color: #32CD32;
 }
 /* Close Button on Modal */
 .close{
     color: #32CD32;
     float: right;
-    font-size: 2rem;
-    font-weight: normal;
+    font-size: 2.45rem;
+    font-weight: 100;
 }
 /* Close Button Behavior */
 .close:hover, .close:focus{
