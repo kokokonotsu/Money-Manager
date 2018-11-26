@@ -8,3 +8,7 @@ expenseModalButton.addEventListener("click", () => { expenseModal.style.display 
 expenseClose.addEventListener("click", () => {expenseModal.style.display = "none"; });
 //Add Event Listener for whenever user clicks outside of the modal content to close modal
 window.addEventListener("click", (event) => { if(event.target == expenseModal){ expenseModal.style.display = "none"; }; });
+
+var incomeModal = document.getElementById("income-modal");
+var incomeModalButton = document.getElementById("create-income-modal-button");
+var incomeClose = document.getElementById("income-close");

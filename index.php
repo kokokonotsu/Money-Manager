@@ -57,6 +57,7 @@
   </header>
 <main class="main-container main-grid">
 <input type="button" name="create-expense-modal-button" id="create-expense-modal-button" value="Add Expense">
+<input type="button" name="create-income-modal-button" id="create-income-modal-button" value="Add Income">
 <?php
 //Call for Database Connection
 db();
