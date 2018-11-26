@@ -13,14 +13,20 @@
   <div id="expense-modal" class="modal">
     <div class="modal-content">
       <div class="modal-header">
+        <span class="close" id="expense-close">&times;</span>
         <h1>Add Expense Form</h1>
       </div>
       <div class="modal-body">
         <form action="" method="post">
+          <p class="modal-prompt">Expense Title:</p>
           <input type="text" name="expenseTitle" id="expenseTitleInput">
+          <p class="modal-prompt">Expense Description:</p>
           <input type="text-area" name="expenseDescription" id="expenseDescriptionInput">
+          <p class="modal-prompt">Total Expense:</p>
           <input type="text" name="expenseTotal" id="expenseTotalInput">
+          <p class="modal-prompt">Time of Expense:</p>
           <input type="time" name="expenseTime" id="expenseTimeInput">
+          <p class="modal-prompt">Date of Expense:</p>
           <input type="date" name="expenseDate" id="expenseDateInput">
           <input type="submit" name="expense-submit" id="expense-submit-button">
         </form>
