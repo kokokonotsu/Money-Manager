@@ -202,6 +202,10 @@ header h1{
     border: 1px solid #32CD32;
     color: #32CD32;
 }
+.main-container input[type="button"]:hover{
+    border-color: #FFB000;
+    color: #FFB000;
+}
 .main-container i{
     font-size: 1em;
 }
