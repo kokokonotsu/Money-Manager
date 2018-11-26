@@ -33,6 +33,25 @@
       </div>
     </div>
   </div>
+  <div id="income-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <i class="material-icons close" id="income-close">clear</i>
+          <h1>Add Income Form</h1>
+        </div>
+        <div class="modal-body">
+          <form action="" method="post">
+            <p class="modal-prompt">Total Income:</p>
+            <input type="text" name="incomeTotal" id="incomeTotalInput">
+            <p class="modal-prompt">Time of Income:</p>
+            <input type="time" name="incomeTime" id="incomeTimeInput">
+            <p class="modal-prompt">Date of Income:</p>
+            <input type="date" name="incomeDate" id="incomeDateInput">
+            <input type="submit" name="income-submit" id="income-submit-button">
+          </form>
+        </div>
+      </div>
+    </div>
   <header>
     <h1>Money Manager</h1>
   </header>
