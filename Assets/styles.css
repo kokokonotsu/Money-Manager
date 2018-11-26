@@ -238,6 +238,42 @@ header h1{
     align-items: center;
     overflow: auto;
 }
+/* Modal Start */
+.modal{
+    display: none; /* hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black; /* fallback color in case browser does not support opacity hexes*/
+    background-color: #00000066; /* black with opacity */
+}
+/* Modal Content */
+.modal-content{
+    background-color: black;
+    margin: 15% auto; /* Will keep modal 15% of screen height from the top, an center it via auto margin-sides */
+    padding: 20px;
+    border: 1px solid #32CD32;
+    width: 80%;
+}
+/* Close Button on Modal */
+.close{
+    color: #32CD32;
+    float: right;
+    font-size: 2rem;
+    font-weight: normal;
+}
+/* Close Button Behavior */
+.close:hover, .close:focus{
+    color: #FFB000;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Modal Content End*/
+/* Modal End */
 table, tbody{
     border-color: #32CD32;
 }
