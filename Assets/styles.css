@@ -74,7 +74,8 @@ header h1{
     display: grid;
     grid-template:
     "header header" 10%
-    "main done" 80%
+    "balance balance" auto
+    "main done" 70%
     "footer footer" 10%
     / 50% 50%;
 }
@@ -259,6 +260,7 @@ header h1{
     padding: 0;
     border: 1px solid #32CD32;
     width: 80%;
+    animation: animate-modal 0.4s;
 }
 /* Modal Header */
 .modal-header{
@@ -294,6 +296,17 @@ header h1{
 }
 /* Modal Content End*/
 /* Modal End */
+.balance{
+    grid-area: balance;
+    margin: 5px 5px 0 5px;
+    border: 1px solid #32CD32;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.balance h1{
+    margin: 0;
+}
 table, tbody{
     border-color: #32CD32;
 }
@@ -329,6 +342,14 @@ footer a:hover{
 }
 .float-right{
     float: right;
+}
+@keyframes animate-modal{
+    from{
+        top: -300px; opacity: 0;
+    }
+    to{
+        top: 0; opacity: 1;
+    }
 }
 @media screen and (max-width: 500px){
 .grid-index{
