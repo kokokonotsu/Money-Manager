@@ -14,9 +14,9 @@ if(mysqli_num_rows($result) >= 1){
     $expense = $row["expenseTotal"];
     ?>
     <ul>
-      <li class="li-expense">
+      <li class="li-invoice">
         <a href="detail.php?id=<?php echo $id?>" class="task-title"><?php echo "$title"?></a>
-        <div class="li-expense-span-div">
+        <div class="li-invoice-span-div">
           <span><?php echo "\$$expense";?></span>
           <span><?php echo "[$time]";?></span>
           <span><?php echo "[$date]";?></span>
