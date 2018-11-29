@@ -57,8 +57,10 @@
   </header>
   <div class="balance-container"><h1 id="balance"><?php require("balance.php"); ?></h1></div>
 <main class="main-container main-grid">
-<input type="button" name="create-expense-modal-button" id="create-expense-modal-button" value="Add Expense">
-<input type="button" name="create-income-modal-button" id="create-income-modal-button" value="Add Income">
+<div class="main-button-container">
+  <input type="button" name="create-expense-modal-button" id="create-expense-modal-button" value="Add Expense">
+  <input type="button" name="create-income-modal-button" id="create-income-modal-button" value="Add Income">
+</div>
 <?php
 //Call for Database Connection
 db();
@@ -88,38 +90,10 @@ if(mysqli_num_rows($result) >= 1){
   }
 }
 ?>
-</main>
+<!-- </main>
 <main class="main-done">
-<p>Tasks Completed</p>
-<?php
-  if(isset($_POST['cross-out-button'])){
-    $query_complete_insert = "INSERT INTO complete (todoTitle, todoDescription, time, date) SELECT todoTitle, todoDescription, time, date FROM todo";
-    $result_complete_insert = mysqli_query($link, $query_complete_insert);
-  }
-?>
-
-<?php
-  $query_complete_select = "SELECT id, todoTitle, todoDescription, time, date FROM complete";
-  $result_complete_select = mysqli_query($link, $query_complete_select);
-  if(mysqli_num_rows($result_complete_select) >= 1){
-    while($row = mysqli_fetch_array($result_complete_select)){
-      $id_complete =$row["id"];
-      $title_complete = $row["todoTitle"];
-      $time_complete = $row["time"];
-      $date_complete = $row["date"];
-      ?>
-      <ul>
-        <li>
-        <a href="detail.php?id=<?php echo $id_complete?>" class="task-title"><?php echo "$title_complete "?></a>
-        <span><?php echo "[ $time_complete ]" ?></span>
-        <span><?php echo "[[ $date_complete ]]";?></span>
-        </li>
-      </ul>
-    <?php
-  }
-}
-?>
-</main>
+<p>Invoices</p>
+</main> -->
 </body>
 <script src="main.js"></script>
 <script>
