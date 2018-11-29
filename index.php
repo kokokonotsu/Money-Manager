@@ -79,6 +79,9 @@
     global $link;
     $query = "INSERT INTO expense(expenseTitle, expenseDescription, expenseTime, expenseDate) VALUES('$expenseTitle', '$expenseDescription', '$expenseTotal', '$expenseTime', '$expenseDate')";
     $result = mysqli_query($link, $query);
+    if(!$result){
+      echo mysqli_error();
+    }
   }
 ?>
 <script src="main.js"></script>
