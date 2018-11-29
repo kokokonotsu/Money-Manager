@@ -55,18 +55,18 @@
   <header>
     <h1>Money Manager</h1>
   </header>
-  <div class="balance-container"><h1 id="balance"><?php require("balance.php"); ?></h1></div>
-<main class="main-container main-grid">
-<div class="main-button-container">
-  <input type="button" name="create-expense-modal-button" id="create-expense-modal-button" value="Add Expense">
-  <input type="button" name="create-income-modal-button" id="create-income-modal-button" value="Add Income">
-</div>
+  <div class="balance-container"><h1 id="balance">Balance: [<?php require("balance.php"); ?>]</h1></div>
+  <div class="main-button-container">
+    <input type="button" name="create-expense-modal-button" id="create-expense-modal-button" value="Add Expense">
+    <input type="button" name="create-income-modal-button" id="create-income-modal-button" value="Add Income">
+  </div>
+<main class="main-container main-expense">
+<p class="main-title">Expenses</p>
 <?php require("display-expense.php"); ?>
 </main>
-<!--
-<main class="main-done">
-<p>Invoices</p>
-</main> -->
+<main class="main-container main-income">
+<p class="main-title">Income</p>
+</main>
 </body>
 <?php 
   if(isset($_POST['expense-submit'])){

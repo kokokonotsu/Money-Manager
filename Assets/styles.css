@@ -75,7 +75,8 @@ header h1{
     grid-template:
     "header header" 10%
     "balance balance" auto
-    "main main" 70%
+    "buttons buttons" auto
+    "income expense" 70%
     "footer footer" 10%
     / 50% 50%;
 }
@@ -87,10 +88,41 @@ header h1{
     border: 1px solid #32CD32;
     overflow: auto;
 }
-.main-button-container{
-    
+.main-container .main-title{
+    margin: 0;
 }
-.main-container a:hover{
+.main-button-container{
+    grid-area: buttons;
+    border: 1px solid #32CD32;
+    margin: 5px 5px 0 5px;
+}
+.main-button-container input{
+    font-size: 2rem;
+    font-family: "px-vga", Arial, Helvetica, sans-serif;
+    border: 1px solid #32CD32;
+    color: #32CD32;
+    caret-color: #32CD32;
+    display: inline;
+    background-color: black;
+    max-width: 80vw;
+    margin: 5px;
+}
+.main-button-container input[type="button"]:hover{
+    border-color: #FFB000;
+    color: #FFB000;
+    cursor: pointer;
+}
+.main-button-container input[type="button"]:hover i{
+    border-color: #FFB000;
+    color: #FFB000;
+    cursor: pointer;
+}
+.main-button-container input[type="submit"]:hover{
+    border-color: #FFB000;
+    color: #FFB000;
+    cursor: pointer;
+}
+.main-button-container a:hover{
     text-decoration: underline;
 }
 .main-container p, .main-done p{
@@ -222,6 +254,12 @@ header h1{
 }
 .main-grid{
     grid-area: main;
+}
+.main-expense{
+    grid-area: expense;
+}
+.main-income{
+    grid-area: income;
 }
 .main-grid-response{
     grid-area: response;
