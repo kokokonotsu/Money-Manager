@@ -8,14 +8,12 @@ $result = mysqli_query($link, $query);
 if(mysqli_num_rows($result) >= 1){
   while($row = mysqli_fetch_array($result)){
     $id =$row["id"];
-    $title = $row["incomeTitle"];
+    $income = $row["incomeTotal"];
     $time = $row["incomeTime"];
     $date = $row["incomeDate"];
-    $income = $row["incomeTotal"];
     ?>
     <ul>
       <li class="li-invoice">
-        <a href="detail.php?id=<?php echo $id?>" class="task-title"><?php echo "$title"?></a>
         <div class="li-invoice-span-div">
           <span><?php echo "\$$income";?></span>
           <span><?php echo "[$time]";?></span>
