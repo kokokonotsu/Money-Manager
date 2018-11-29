@@ -1,4 +1,4 @@
-<?php require("db_connect.php");?>
+<?php require("db_connect.php"); ?>
 <html>
 <head>
   <meta charset="utf-8" />
@@ -55,7 +55,7 @@
   <header>
     <h1>Money Manager</h1>
   </header>
-  <div class="balance"><h1>Balance Placeholder</h1></div>
+  <div class="balance-container"><h1 id="balance"><?php require("balance.php"); ?></h1></div>
 <main class="main-container main-grid">
 <input type="button" name="create-expense-modal-button" id="create-expense-modal-button" value="Add Expense">
 <input type="button" name="create-income-modal-button" id="create-income-modal-button" value="Add Income">

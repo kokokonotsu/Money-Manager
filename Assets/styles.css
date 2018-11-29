@@ -296,7 +296,7 @@ header h1{
 }
 /* Modal Content End*/
 /* Modal End */
-.balance{
+.balance-container{
     grid-area: balance;
     margin: 5px 5px 0 5px;
     border: 1px solid #32CD32;
@@ -304,7 +304,7 @@ header h1{
     flex-direction: column;
     justify-content: center;
 }
-.balance h1{
+.balance-container h1{
     margin: 0;
 }
 table, tbody{
