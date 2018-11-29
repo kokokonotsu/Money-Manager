@@ -61,13 +61,26 @@
   <input type="button" name="create-expense-modal-button" id="create-expense-modal-button" value="Add Expense">
   <input type="button" name="create-income-modal-button" id="create-income-modal-button" value="Add Income">
 </div>
-<?php require("expense.php"); ?>
+<?php require("display-expense.php"); ?>
 </main>
 <!--
 <main class="main-done">
 <p>Invoices</p>
 </main> -->
 </body>
+<?php 
+  if(isset($_POST['expense-submit'])){
+    $expenseTitle = $_POST["expenseTitle"];
+    $expenseDescription = $_POST["expenseDescription"];
+    $expenseTotal = $_POST["expenseTotal"];
+    $expenseTime = $_POST["expenseTime"];
+    $expenseDate = $_POST["expenseDate"];
+    db();
+    global $link;
+    $query = "INSERT INTO expense(expenseTitle, expenseDescription, expenseTime, expenseDate) VALUES('$expenseTitle', '$expenseDescription', '$expenseTotal', '$expenseTime', '$expenseDate')";
+    $result = mysqli_query($link, $query);
+  }
+?>
 <script src="main.js"></script>
 <script>
 if(window.history.replaceState){
