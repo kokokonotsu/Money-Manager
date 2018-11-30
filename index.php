@@ -87,56 +87,18 @@
 <?php require("display-income.php"); ?>
 </main>
 </body>
-<?php 
-  if(isset($_POST['expense-submit'])){
-    $expenseTitle = $_POST["expenseTitle"];
-    $expenseDescription = $_POST["expenseDescription"];
-    $expenseTotal = $_POST["expenseTotal"];
-    $expenseTime = $_POST["expenseTime"];
-    $expenseDate = $_POST["expenseDate"];
-    db();
-    global $link;
-    $query_expense = "INSERT INTO expense(expenseTitle, expenseDescription, expenseTime, expenseDate) VALUES('$expenseTitle', '$expenseDescription', '$expenseTotal', '$expenseTime', '$expenseDate')";
-    $result_expense = mysqli_query($link, $query_expense);
-    if(!$result_expense){
-      echo mysqli_error();
-    }
-    $balanceExpenseQuery = "SELECT TotalBalance FROM balance";
-    $balanceExpenseResult = mysqli_query($link, $balanceExpenseQuery);
-    $balanceExpenseRow = mysqli_fetch_array($balanceExpenseResult);
-    $balanceExpenseAmount = $balanceExpenseRow["TotalBalance"];
-    $balance_expense = $balanceExpenseAmount - $expenseTotal;
-    $insertBalanceExpense = "REPLACE INTO balance VALUES (1, '$balance_expense')";
-    $insertBalanceExpenseResult = mysqli_query($link, $insertBalanceExpense);
-    if(!$insertBalanceExpenseResult){
-      echo("No Balance Result");
-    }
-  }
-?>
+
+<?php require("add-expense.php"); ?>
+<?php require("add-income.php"); ?>
 <?php
-if(isset($_POST["income-submit"])){
-  $incomeTotal = $_POST["incomeTotal"];
-  $incomeTime = $_POST["incomeTime"];
-  $incomeDate = $_POST["incomeDate"];
-  $query_income = "INSERT INTO income(incomeTotal, incomeTime, incomeDate) VALUES ('$incomeTotal', '$incomeTime', '$incomeDate')";
-  $result_income = mysqli_query($link, $query_income);
-  if(!$result_income){
+if(isset($_POST["balance-submit"])){
+  $initialBalance = $_POST["initialBalance"];
+  $setBalanceQuery = "REPLACE INTO balance VALUES (1, '$initialBalance')";
+  $setBalanceResult = mysqli_query($link, $setBalanceQuery);
+  if(!$setBalanceResult){
     echo mysqli_error();
   }
-  $balanceIncomeQuery= "SELECT TotalBalance FROM balance";
-  $balanceIncomeResult = mysqli_query($link, $balanceIncomeQuery);
-  $balanceIncomeRow = mysqli_fetch_array($balanceIncomeResult);
-  $balanceIncomeAmount = $balanceIncomeRow["TotalBalance"];
-  $balance_income = $balanceIncomeAmount + $incomeTotal;
-  $insertBalanceIncome = "REPLACE INTO balance VALUES (1, '$balance_income')";
-  $insertBalanceIncomeResult = mysqli_query($link, $insertBalanceIncome);
-  if(!$insertBalanceIncomeResult){
-    echo("No Balance Result");
-  }
 }
-?>
-<?php
-if(isset($_POST))
 ?>
 <script src="main.js"></script>
 <script>
