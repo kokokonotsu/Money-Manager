@@ -20,9 +20,13 @@ if(mysqli_num_rows($result) >= 1){
           <span><?php echo "\$$expense";?></span>
           <span><?php echo "[$time]";?></span>
           <span><?php echo "[$date]";?></span>
-        </div>
-        <button type="button" class="edit-button"><a href="update.php?id=<?php echo $id?>"><i class="fas fa-pen"></i></a></button>
-        <button type="button"><a href="delete.php?id=<?php echo $id?>"><i class="fas fa-times"></i></a></button>
+        </div> 
+        <form class="expense-edit-form" action="" method="post">
+          <input type="submit" name="expense-edit-button" class="edit-button" value="&#xf304;">
+        </form>
+        <form class="expense-delete-form" action="" method="post">
+          <input type="submit" name="expense-delete-button" class="delete-button" value="&#xf00d;">
+        </form>
       </li>
     </ul>
     <?php

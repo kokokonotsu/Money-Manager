@@ -261,8 +261,18 @@ header h1{
 .main-expense{
     grid-area: expense;
 }
+.expense-edit-form, .expense-delete-form{
+    display: inline-block;
+}
 .main-income{
     grid-area: income;
+}
+.main-expense form input[type="submit"], .main-income form input[type="submit"]{
+    font-size: 1rem;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    padding: 2px 3px;
+    margin: 0 3px;
 }
 .main-grid-response{
     grid-area: response;
