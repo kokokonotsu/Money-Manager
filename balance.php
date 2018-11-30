@@ -2,7 +2,7 @@
         db();
         global $link;
         global $balance;
-        $query = "SELECT * FROM balance";
+        $query = "SELECT TotalBalance FROM balance";
         $result = mysqli_query($link, $query);
         $row = mysqli_fetch_array($result);
         $balance = $row["TotalBalance"];
