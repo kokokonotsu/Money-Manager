@@ -60,6 +60,7 @@
   <div class="balance-container"><h1 id="balance">Balance: [<?php require("balance.php"); ?>]</h1></div>
   <div class="main-button-container">
     <input type="button" name="create-income-modal-button" id="create-income-modal-button" value="Add Income">
+    <input type="button" name="set-balance" id="set-balance" value="Set Initial Balance">
     <input type="button" name="create-expense-modal-button" id="create-expense-modal-button" value="Add Expense">
   </div>
 <main class="main-container main-expense">
@@ -90,7 +91,7 @@
     $balanceExpenseRow = mysqli_fetch_array($balanceExpenseResult);
     $balanceExpenseAmount = $balanceExpenseRow["TotalBalance"];
     $balance_expense = $balanceExpenseAmount - $expenseTotal;
-    $insertBalanceExpense = "REPLACE INTO balance VALUES (1, '$balance')";
+    $insertBalanceExpense = "REPLACE INTO balance VALUES (1, '$balance_expense')";
     $insertBalanceExpenseResult = mysqli_query($link, $insertBalanceExpense);
     if(!$insertBalanceExpenseResult){
       echo("No Balance Result");
@@ -112,7 +113,7 @@ if(isset($_POST["income-submit"])){
   $balanceIncomeRow = mysqli_fetch_array($balanceIncomeResult);
   $balanceIncomeAmount = $balanceIncomeRow["TotalBalance"];
   $balance_income = $balanceIncomeAmount + $incomeTotal;
-  $insertBalanceIncome = "REPLACE INTO balance VALUES (1, '$balance')";
+  $insertBalanceIncome = "REPLACE INTO balance VALUES (1, '$balance_income')";
   $insertBalanceIncomeResult = mysqli_query($link, $insertBalanceIncome);
   if(!$insertBalanceIncomeResult){
     echo("No Balance Result");
