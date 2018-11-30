@@ -78,12 +78,40 @@
     $expenseDate = $_POST["expenseDate"];
     db();
     global $link;
-    $query = "INSERT INTO expense(expenseTitle, expenseDescription, expenseTime, expenseDate) VALUES('$expenseTitle', '$expenseDescription', '$expenseTotal', '$expenseTime', '$expenseDate')";
-    $result = mysqli_query($link, $query);
-    if(!$result){
+    $query_expense = "INSERT INTO expense(expenseTitle, expenseDescription, expenseTime, expenseDate) VALUES('$expenseTitle', '$expenseDescription', '$expenseTotal', '$expenseTime', '$expenseDate')";
+    $result_expense = mysqli_query($link, $query_expense);
+    if(!$result_expense){
       echo mysqli_error();
     }
+    $balanceQuery = "SELECT TotalBalance FROM balance";
+    $balanceResult = mysqli_query($link, $balanceQuery);
+    $balanceRow = mysqli_fetch_array($balanceResult);
+    $balanceAmount = $balanceRow["TotalBalance"];
+    $balance_expense = $balanceAmount - $;
+    $insertBalanceExpense = "REPLACE INTO balance VALUES (1, '$balance')";
+    $insertBalanceExpenseResult = mysqli_query($link, $insertBalanceExpense);
+    if(!$insertBalanceExpenseResult){
+      echo("No Balance Result");
+    }
   }
+?>
+<?php
+if(isset($_POST["income-submit"])){
+  $incomeTotal = $_POST["incomeTotal"];
+  $incomeTime = $_POST["incomeTime"];
+  $incomeDate = $_POST["incomeDate"];
+  $query_income = "INSERT INTO income(incomeTotal, incomeTime, incomeDate) VALUES ('$incomeTotal', '$incomeTime', '$incomeDate')";
+  $result_income = mysqli_query($link, $query_income);
+  if(!$result_income){
+    echo mysqli_error();
+  }
+  $balance = $balanceAmount + $incomeTotal;
+  $insertBalanceIncome = "REPLACE INTO balance VALUES (1, '$balance')";
+  $insertBalanceIncomeResult = mysqli_query($link, $insertBalanceIncome);
+  if(!$insertBalanceIncomeResult){
+    echo("No Balance Result");
+  }
+}
 ?>
 <script src="main.js"></script>
 <script>
