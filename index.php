@@ -66,6 +66,7 @@
 </main>
 <main class="main-container main-income">
 <p class="main-title">Income</p>
+<?php require("display-income.php"); ?>
 </main>
 </body>
 <?php 
