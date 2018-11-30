@@ -27,7 +27,7 @@
           <input type="time" name="expenseTime" id="expenseTimeInput">
           <p class="modal-prompt">Date of Expense:</p>
           <input type="date" name="expenseDate" id="expenseDateInput">
-          <input type="submit" name="expense-submit" id="expense-submit-button">
+          <input type="submit" name="expense-submit" id="expense-submit-button" value="Add Expense">
         </form>
       </div>
     </div>
@@ -46,11 +46,26 @@
             <input type="time" name="incomeTime" id="incomeTimeInput">
             <p class="modal-prompt">Date of Income:</p>
             <input type="date" name="incomeDate" id="incomeDateInput">
-            <input type="submit" name="income-submit" id="income-submit-button">
+            <input type="submit" name="income-submit" id="income-submit-button" value="Add Income">
           </form>
         </div>
       </div>
     </div>
+    <div id="balance-modal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <i class="material-icons close" id="balance-close">clear</i>
+            <h1>Set Initial Balance Form</h1>
+          </div>
+          <div class="modal-body">
+            <form action="" method="post">
+              <p class="modal-prompt">Initial Balance:</p>
+              <input type="text" name="initialBalance" id="initialBalance">
+              <input type="submit" name="balance-submit" id="balance-submit-button" value="Set Balance">
+            </form>
+          </div>
+        </div>
+      </div>
   <footer>
     <?php require("db_connect.php"); ?>
   </footer>
@@ -119,6 +134,9 @@ if(isset($_POST["income-submit"])){
     echo("No Balance Result");
   }
 }
+?>
+<?php
+if(isset($_POST))
 ?>
 <script src="main.js"></script>
 <script>
