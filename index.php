@@ -1,4 +1,3 @@
-<?php require("db_connect.php"); ?>
 <html>
 <head>
   <meta charset="utf-8" />
@@ -52,6 +51,9 @@
         </div>
       </div>
     </div>
+  <footer>
+    <?php require("db_connect.php"); ?>
+  </footer>
   <header>
     <h1>Money Manager</h1>
   </header>

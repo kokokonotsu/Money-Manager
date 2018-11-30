@@ -5,8 +5,8 @@ function db(){
     return $link;
 }
 if(db()){
-    echo "<footer>Connection Successful</footer>";
+    echo "Connection Successful";
 } else {
-    echo "<footer>Connection Unsuccessful</footer>";
+    echo "Connection Unsuccessful";
 }
 ?>

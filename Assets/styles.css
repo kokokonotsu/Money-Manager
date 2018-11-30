@@ -77,7 +77,7 @@ header h1{
     "balance balance" auto
     "buttons buttons" auto
     "income expense" 70%
-    "footer footer" 10%
+    "footer footer" auto
     / 50% 50%;
 }
 .main-container{
@@ -93,11 +93,14 @@ header h1{
 }
 .main-button-container{
     grid-area: buttons;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     border: 1px solid #32CD32;
     margin: 5px 5px 0 5px;
 }
 .main-button-container input{
-    font-size: 2rem;
+    font-size: 3rem;
     font-family: "px-vga", Arial, Helvetica, sans-serif;
     border: 1px solid #32CD32;
     color: #32CD32;
@@ -351,6 +354,7 @@ header h1{
 }
 .balance-container h1{
     margin: 0;
+    font-size: 2rem;
 }
 table, tbody{
     border-color: #32CD32;
