@@ -83,11 +83,11 @@
     if(!$result_expense){
       echo mysqli_error();
     }
-    $balanceQuery = "SELECT TotalBalance FROM balance";
-    $balanceResult = mysqli_query($link, $balanceQuery);
-    $balanceRow = mysqli_fetch_array($balanceResult);
-    $balanceAmount = $balanceRow["TotalBalance"];
-    $balance_expense = $balanceAmount - $;
+    $balanceExpenseQuery = "SELECT TotalBalance FROM balance";
+    $balanceExpenseResult = mysqli_query($link, $balanceExpenseQuery);
+    $balanceExpenseRow = mysqli_fetch_array($balanceExpenseResult);
+    $balanceExpenseAmount = $balanceExpenseRow["TotalBalance"];
+    $balance_expense = $balanceExpenseAmount - $expenseTotal;
     $insertBalanceExpense = "REPLACE INTO balance VALUES (1, '$balance')";
     $insertBalanceExpenseResult = mysqli_query($link, $insertBalanceExpense);
     if(!$insertBalanceExpenseResult){
@@ -105,7 +105,11 @@ if(isset($_POST["income-submit"])){
   if(!$result_income){
     echo mysqli_error();
   }
-  $balance = $balanceAmount + $incomeTotal;
+  $balanceIncomeQuery= "SELECT TotalBalance FROM balance";
+  $balanceIncomeResult = mysqli_query($link, $balanceIncomeQuery);
+  $balanceIncomeRow = mysqli_fetch_array($balanceIncomeResult);
+  $balanceIncomeAmount = $balanceIncomeRow["TotalBalance"];
+  $balance_income = $balanceIncomeAmount + $incomeTotal;
   $insertBalanceIncome = "REPLACE INTO balance VALUES (1, '$balance')";
   $insertBalanceIncomeResult = mysqli_query($link, $insertBalanceIncome);
   if(!$insertBalanceIncomeResult){
