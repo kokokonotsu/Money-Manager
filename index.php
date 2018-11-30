@@ -31,7 +31,7 @@
         </form>
       </div>
     </div>
-  </div>
+</div>
   <div id="income-modal" class="modal">
       <div class="modal-content">
         <div class="modal-header">
@@ -51,7 +51,7 @@
         </div>
       </div>
     </div>
-    <div id="balance-modal" class="modal">
+  <div id="balance-modal" class="modal">
         <div class="modal-content">
           <div class="modal-header">
             <i class="material-icons close" id="balance-close">clear</i>
@@ -80,26 +80,16 @@
   </div>
 <main class="main-container main-expense">
 <p class="main-title">Expenses</p>
-<?php require("display-expense.php"); ?>
+  <?php require("display-expense.php"); ?>
 </main>
 <main class="main-container main-income">
 <p class="main-title">Income</p>
-<?php require("display-income.php"); ?>
+  <?php require("display-income.php"); ?>
 </main>
 </body>
-
 <?php require("add-expense.php"); ?>
 <?php require("add-income.php"); ?>
-<?php
-if(isset($_POST["balance-submit"])){
-  $initialBalance = $_POST["initialBalance"];
-  $setBalanceQuery = "REPLACE INTO balance VALUES (1, '$initialBalance')";
-  $setBalanceResult = mysqli_query($link, $setBalanceQuery);
-  if(!$setBalanceResult){
-    echo mysqli_error();
-  }
-}
-?>
+<?php require("set-balance.php"); ?>
 <script src="main.js"></script>
 <script>
 if(window.history.replaceState){
