@@ -7,7 +7,7 @@
     $expenseDate = $_POST["expenseDate"];
     db();
     global $link;
-    $query_expense = "INSERT INTO expense(expenseTitle, expenseDescription, expenseTime, expenseDate) VALUES('$expenseTitle', '$expenseDescription', '$expenseTotal', '$expenseTime', '$expenseDate')";
+    $query_expense = "INSERT INTO expense(expenseTitle, expenseDescription, expenseTime, expenseDate, expenseTotal) VALUES('$expenseTitle', '$expenseDescription', '$expenseTime', '$expenseDate', '$expenseTotal')";
     $result_expense = mysqli_query($link, $query_expense);
     if(!$result_expense){
       echo mysqli_error();
