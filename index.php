@@ -75,7 +75,7 @@
   <div class="balance-container"><h1 id="balance">Balance: [<?php require("balance.php"); ?>]</h1></div>
   <div class="main-button-container">
     <input type="button" name="create-income-modal-button" id="create-income-modal-button" value="Add Income">
-    <input type="button" name="set-balance" id="set-balance" value="Set Initial Balance">
+    <input type="button" name="set-balance-modal-button" id="set-balance-modal-button" value="Set Initial Balance">
     <input type="button" name="create-expense-modal-button" id="create-expense-modal-button" value="Add Expense">
   </div>
 <main class="main-container main-expense">
