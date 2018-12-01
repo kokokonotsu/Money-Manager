@@ -22,14 +22,28 @@ if(mysqli_num_rows($result) >= 1){
           <span><?php echo "[$date]";?></span>
         </div> 
         <form class="expense-edit-form" action="" method="post">
+          <input type="hidden" name="expense-edit-hidden-id" id="expense-edit-hidden-id" value="<?php echo $id ?>">
           <input type="submit" name="expense-edit-button" class="edit-button" value="&#xf304;">
         </form>
         <form class="expense-delete-form" action="" method="post">
+          <input type="hidden" name="expense-delete-hidden-id" id="expense-delete-hidden-id" value="<?php echo $id ?>">
           <input type="submit" name="expense-delete-button" class="delete-button" value="&#xf00d;">
         </form>
       </li>
     </ul>
     <?php
   }
+}
+?>
+<?php 
+if(isset($_POST["expense-edit-button"])){
+  $editId = $_POST["expense-edit-hidden-id"];
+  require("edit-expense.php");  
+}
+?>
+<?php 
+if(isset($_POST["expense-delete-button"])){
+  $deleteId = $_POST["expense-delete-hidden-id"];
+  require("delete-expense.php");
 }
 ?>
