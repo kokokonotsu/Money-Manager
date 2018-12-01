@@ -491,13 +491,16 @@ footer a:hover{
 .li-invoice span{
     font-size: 5vw;
 }
-.modal-body form p, .modal-body input{
-margin-block-start: 2vh;
+.modal-body form p, .modal-body form input{
+margin-block-start: 1.3vh;
 }
 .modal-header h1{
     font-size: 8vw;
 }
 .modal-header i{
     font-size: 7vw;
+}
+.main-expense form input[type="submit"], .main-income form input[type="submit"]{
+    font-size: 2.5vw;
 }
 }
