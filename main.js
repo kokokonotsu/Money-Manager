@@ -7,6 +7,10 @@ var incomeClose = document.getElementById("income-close");
 var balanceModal = document.getElementById("balance-modal");
 var balanceModalButton = document.getElementById("set-balance-modal-button");
 var balanceClose = document.getElementById("balance-close");
+var allExpenseEditButtons = document.getElementsByClassName("expense-edit-submit-button");
+var editExpenseModal = document.getElementById("edit-expense-modal");
+var editExpenseClose = document.getElementById("edit-expense-close");
+var editExpenseTitle = document.getElementById("edit-expense-title");
 // var balance = document.getElementById("balance");
 // var incomeButton = document.getElementById("income-submit-button");
 // var expenseButton = document.getElementById("expense-submit-button");
@@ -37,3 +41,9 @@ balanceModalButton.addEventListener("click", () => { balanceModal.style.display 
 balanceClose.addEventListener("click", () => {balanceModal.style.display = "none"; });
 //Add Event Listener for whenever user clicks outside of the modal content to close modal
 window.addEventListener("click", (event) => { if(event.target == balanceModal){ balanceModal.style.display = "none"; }; });
+//Add Event Listener for whenever user clicks the close button
+if(editExpenseClose){
+    editExpenseClose.addEventListener("click", () => {editExpenseModal.style.display = "none"; });
+}
+//Add Event Listener for whenever user clicks outside of the modal content to close modal
+window.addEventListener("click", (event) => { if(event.target == editExpenseModal){ editExpenseModal.style.display = "none"; }; });
