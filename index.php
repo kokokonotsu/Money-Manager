@@ -69,8 +69,8 @@
           </div>
         </div>
       </div>
-  <div id="edit-expense-modal" class="modal">
-        <!-- <div class="modal-content">
+  <!--<div id="edit-expense-modal" class="modal">
+        <div class="modal-content">
           <div class="modal-header">
             <i class="material-icons close" id="edit-expense-close">clear</i>
             <h1>Edit Expense Form</h1>
