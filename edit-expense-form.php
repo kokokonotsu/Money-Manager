@@ -9,7 +9,8 @@
             $editExpenseTime = $row["expenseTime"];
             $editExpenseDate = $row["expenseDate"];
             $editExpenseTotal = $row["expenseTotal"];
-            echo '<div id="edit-expense-modal" class="modal">
+            echo '
+            <div id="edit-expense-modal" class="expense-modal">
             <div class="modal-content">
             <div class="modal-header">
               <i class="material-icons close" id="edit-expense-close">clear</i>

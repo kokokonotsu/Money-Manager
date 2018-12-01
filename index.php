@@ -92,12 +92,9 @@
           </div>
         </div>
       </div> -->
-<?php 
-if(isset($_POST["expense-edit-button"])){
-  $editId = $_POST["expense-edit-hidden-id"];
-  require("edit-expense-form.php");
-}
-?>
+<div class="edit-expense-modal-container">
+<?php if(isset($_POST["expense-edit-button"])){ $editId = $_POST["expense-edit-hidden-id"]; require("edit-expense-form.php");} ?>
+</div>
   <header>
     <h1>Money Manager</h1>
   </header>
