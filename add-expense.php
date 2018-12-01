@@ -5,6 +5,9 @@
     $expenseTotal = $_POST["expenseTotal"];
     $expenseTime = $_POST["expenseTime"];
     $expenseDate = $_POST["expenseDate"];
+    if(empty($expenseTotal)){
+      $expenseTotal = 0;
+    }
     db();
     global $link;
     $query_expense = "INSERT INTO expense(expenseTitle, expenseDescription, expenseTime, expenseDate, expenseTotal) VALUES('$expenseTitle', '$expenseDescription', '$expenseTime', '$expenseDate', '$expenseTotal')";
