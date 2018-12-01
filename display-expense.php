@@ -36,12 +36,6 @@ if(mysqli_num_rows($result) >= 1){
 }
 ?>
 <?php 
-if(isset($_POST["expense-edit-button"])){
-  $editId = $_POST["expense-edit-hidden-id"];
-  require("edit-expense.php");  
-}
-?>
-<?php 
 if(isset($_POST["expense-delete-button"])){
   $deleteId = $_POST["expense-delete-hidden-id"];
   require("delete-expense.php");
