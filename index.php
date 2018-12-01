@@ -2,7 +2,8 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>To-Do Task List</title>
+  <title>Money Manager
+  </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -12,6 +13,11 @@
   <footer>
     <?php require("db_connect.php"); ?>
   </footer>
+  <div class="error-modal-container">
+    <?php require("add-expense.php"); ?>
+    <?php require("add-income.php"); ?>
+    <?php require("set-balance.php"); ?>
+  </div>
   <div id="expense-modal" class="modal">
     <div class="modal-content">
       <div class="modal-header">
@@ -108,9 +114,6 @@ if(isset($_POST["edit-income-submit"])){
   <?php require("display-income.php"); ?>
 </main>
 </body>
-<?php require("add-expense.php"); ?>
-<?php require("add-income.php"); ?>
-<?php require("set-balance.php"); ?>
 <script src="main.js"></script>
 <script>
 if(window.history.replaceState){
