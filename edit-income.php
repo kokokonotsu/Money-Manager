@@ -27,10 +27,11 @@
         }
     }
     $updateIncomeQuery = "UPDATE income 
-    SET incomeTotal = '$newIncomeTotal',
+    SET 
+    incomeTotal = '$newIncomeTotal',
     incomeTime = '$newIncomeTime',
     incomeDate = '$newIncomeDate'
-    WHERE id = $editIncomeFormHiddenId";
+    WHERE id = '$editIncomeFormHiddenId'";
     $updateIncomeResult = mysqli_query($link, $updateIncomeQuery);
     if(!$updateIncomeResult){
         echo mysqli_error();

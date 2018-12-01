@@ -7,7 +7,7 @@ $query = "SELECT * FROM income";
 $result = mysqli_query($link, $query);
 if(mysqli_num_rows($result) >= 1){
   while($row = mysqli_fetch_array($result)){
-    $id =$row["id"];
+    $incomeId =$row["id"];
     $income = $row["incomeTotal"];
     $time = $row["incomeTime"];
     $date = $row["incomeDate"];
@@ -20,11 +20,11 @@ if(mysqli_num_rows($result) >= 1){
           <span><?php echo "[$date]";?></span>
         </div>
         <form class="income-edit-form" action="" method="post">
-          <input type="hidden" name="income-edit-hidden-id" id="income-edit-hidden-id" value="<?php echo $id ?>">
+          <input type="hidden" name="income-edit-hidden-id" id="income-edit-hidden-id" value="<?php echo $incomeId ?>">
           <input type="submit" name="income-edit-button" class="income-edit-submit-button" value="&#xf304;">
         </form>
         <form class="income-delete-form" action="" method="post">
-          <input type="hidden" name="income-delete-hidden-id" id="income-delete-hidden-id" value="<?php echo $id ?>">
+          <input type="hidden" name="income-delete-hidden-id" id="income-delete-hidden-id" value="<?php echo $incomeId ?>">
           <input type="submit" name="income-delete-button" class="income-delete-submit-button" value="&#xf00d;">
         </form>
       </li>

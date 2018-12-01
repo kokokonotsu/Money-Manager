@@ -315,7 +315,7 @@ header h1{
     background-color: black; /* fallback color in case browser does not support opacity hexes*/
     background-color: #00000066; /* black with opacity */
 }
-.expense-modal{
+.expense-modal, .income-modal{
     display: block; /* hidden by default */
     position: fixed;
     z-index: 1;

@@ -8,7 +8,7 @@
             $editIncomeTime = $row["incomeTime"];
             $editIncomeDate = $row["incomeDate"];
             echo '
-            <div id="edit-income-modal" class="modal">
+            <div id="edit-income-modal" class="income-modal">
           <div class="modal-content">
             <div class="modal-header">
               <i class="material-icons close" id="edit-income-close">clear</i>
