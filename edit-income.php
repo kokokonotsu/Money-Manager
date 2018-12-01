@@ -11,7 +11,7 @@
     $currentBalanceIncome = $currentBalanceRow["TotalBalance"];
     if($newIncomeTotal > $oldIncomeTotal){
         $newBalanceTotalSubtract = ($newIncomeTotal - $oldIncomeTotal);
-        $newBalanceIncomeTotal = ($currentBalanceIncome - $newBalanceTotalSubtract);
+        $newBalanceIncomeTotal = ($currentBalanceIncome + $newBalanceTotalSubtract);
         $newBalanceSubtractQuery = "UPDATE balance SET TotalBalance = '$newBalanceIncomeTotal' WHERE id = 1";
         $newBalanceSubtractQueryResult = mysqli_query($link, $newBalanceSubtractQuery);
         if(!$newBalanceSubtractQueryResult){
@@ -19,7 +19,7 @@
         }
     } else if($newIncomeTotal < $oldIncomeTotal){
         $newBalanceTotalAdd = ($oldIncomeTotal - $newIncomeTotal);
-        $newBalanceIncomeTotal = ($currentBalanceIncome + $newBalanceTotalAdd);
+        $newBalanceIncomeTotal = ($currentBalanceIncome - $newBalanceTotalAdd);
         $newBalanceAddQuery = "UPDATE balance SET TotalBalance = '$newBalanceIncomeTotal' WHERE id = 1";
         $newBalanceAddQueryResult = mysqli_query($link, $newBalanceAddQuery);
         if(!$newBalanceAddQueryResult){
