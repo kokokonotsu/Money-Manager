@@ -29,6 +29,7 @@
                 <p class="modal-prompt">Edit Expense Date:</p>
                 <input type="date" name="edit-expense-date" id="edit-expense-date" value=' . $editExpenseDate . '>
                 <input type="hidden" name="edit-expense-form-hidden-id" id="edit-expense-form-hidden-id" value="' . $editId . '">
+                <input type="hidden" name="edit-expense-form-hidden-total" id="edit-expense-form-hidden-total" value="' . $editExpenseTotal . '">
                 <input type="submit" name="edit-expense-submit" id="edit-expense-button" value="Edit Expense">
               </form>
             </div>
