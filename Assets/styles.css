@@ -434,11 +434,34 @@ footer a:hover{
 }
 @media screen and (max-width: 500px){
 .grid-index{
-    grid-template:
+    /* grid-template:
     "header" 10%
     "main" auto
     "done" auto
     "footer" 10%
+    / 100%; */
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template:
+    "header" 10%
+    "balance" auto
+    "buttons" auto
+    "income" 35%
+    "expense" 35%
+    "footer" auto
     / 100%;
+}
+.main-button-container input{
+    font-size: 1.1rem;
+    font-family: "px-vga", Arial, Helvetica, sans-serif;
+    border: 1px solid #32CD32;
+    color: #32CD32;
+    caret-color: #32CD32;
+    display: inline;
+    background-color: black;
+    max-width: 80vw;
+    margin: 5px;
 }
 }
