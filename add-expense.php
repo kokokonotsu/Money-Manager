@@ -5,21 +5,6 @@
     $expenseTotal = $_POST["expenseTotal"];
     $expenseTime = $_POST["expenseTime"];
     $expenseDate = $_POST["expenseDate"];
-    function check($string){
-      $string  = htmlspecialchars($string);
-      $string = strip_tags($string);
-      $string = trim($string);
-      $string = stripslashes($string);
-      return $string;
-    }
-    if(empty($expenseTitle)){
-      $error = true;
-      $expenseTitleErrorMessage = "Must include an Expense Title";
-    }
-    if(empty($expenseTotal)){
-      $error = true;
-      $expenseTotalErrorMessage = "Must include an Expense Amount";
-    }
     db();
     global $link;
     $query_expense = "INSERT INTO expense(expenseTitle, expenseDescription, expenseTime, expenseDate, expenseTotal) VALUES('$expenseTitle', '$expenseDescription', '$expenseTime', '$expenseDate', '$expenseTotal')";
