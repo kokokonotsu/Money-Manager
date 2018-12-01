@@ -12,4 +12,7 @@
     expenseTotal = '$newExpenseTotal'
     WHERE id = $editId";
     $updateExpenseResult = mysqli_query($link, $updateExpenseQuery);
+    if(!$updateExpenseResult){
+        echo mysqli_error();
+    }
 ?>
