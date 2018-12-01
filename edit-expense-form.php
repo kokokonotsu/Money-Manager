@@ -18,6 +18,7 @@
             </div>
             <div class="modal-body">
               <form action="" method="post">
+                <p class="modal-prompt">Expense Entry ID: [' . $editId . ']</p>
                 <p class="modal-prompt">Edit Expense Title:</p>
                 <input type="text" name="edit-expense-title" id="edit-expense-title" value=' . $editExpenseTitle . '>
                 <p class="modal-prompt">Edit Expense Description:</p>
