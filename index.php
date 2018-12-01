@@ -9,6 +9,9 @@
   <link rel="stylesheet" type="text/css" media="screen" href="Assets/styles.css" />
 </head>
 <body class="grid-index">
+  <footer>
+    <?php require("db_connect.php"); ?>
+  </footer>
   <div id="expense-modal" class="modal">
     <div class="modal-content">
       <div class="modal-header">
@@ -31,7 +34,7 @@
         </form>
       </div>
     </div>
-</div>
+  </div>
   <div id="income-modal" class="modal">
       <div class="modal-content">
         <div class="modal-header">
@@ -66,9 +69,35 @@
           </div>
         </div>
       </div>
-  <footer>
-    <?php require("db_connect.php"); ?>
-  </footer>
+  <div id="edit-expense-modal" class="modal">
+        <!-- <div class="modal-content">
+          <div class="modal-header">
+            <i class="material-icons close" id="edit-expense-close">clear</i>
+            <h1>Edit Expense Form</h1>
+          </div>
+          <div class="modal-body">
+            <form action="" method="post">
+              <p class="modal-prompt">Edit Expense Title:</p>
+              <input type="text" name="edit-expense-title" id="edit-expense-title" value="$editExpenseTitle">
+              <p class="modal-prompt">Edit Expense Description:</p>
+              <input type="text" name="edit-expense-description" id="edit-expense-description" value="$editExpenseDescription">
+              <p class="modal-prompt">Edit Expense Total:</p>
+              <input type="text" name="edit-expense-total" id="edit-expense-total" value="$editExpenseTotal">
+              <p class="modal-prompt">Edit Expense Time:</p>
+              <input type="time" name="edit-expense-time" id="edit-expense-time" value="$editExpenseTime">
+              <p class="modal-prompt">Edit Expense Date:</p>
+              <input type="date" name="edit-expense-date" id="edit-expense-date" value="$editExpenseDate">
+              <input type="submit" name="edit-expense-submit" id="edit-expense-button" value="Edit Expense">
+            </form>
+          </div>
+        </div>
+      </div> -->
+<?php 
+if(isset($_POST["expense-edit-button"])){
+  $editId = $_POST["expense-edit-hidden-id"];
+  require("edit-expense-form.php");
+}
+?>
   <header>
     <h1>Money Manager</h1>
   </header>
@@ -90,6 +119,11 @@
 <?php require("add-expense.php"); ?>
 <?php require("add-income.php"); ?>
 <?php require("set-balance.php"); ?>
+<?php 
+if(isset($_POST["edit-expense-submit"])){
+  require("edit-expense.php");
+}
+?>
 <script src="main.js"></script>
 <script>
 if(window.history.replaceState){
