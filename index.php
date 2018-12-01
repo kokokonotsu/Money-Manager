@@ -97,6 +97,9 @@
 if(isset($_POST["expense-edit-button"])){
   $editId = $_POST["expense-edit-hidden-id"];
   require("edit-expense-form.php");}
+  if(isset($_POST["edit-expense-submit"])){
+    require("edit-expense.php");
+  }
 ?>
 </div>
   <header>
@@ -120,11 +123,6 @@ if(isset($_POST["expense-edit-button"])){
 <?php require("add-expense.php"); ?>
 <?php require("add-income.php"); ?>
 <?php require("set-balance.php"); ?>
-<?php 
-if(isset($_POST["edit-expense-submit"])){
-  require("edit-expense.php");
-}
-?>
 <script src="main.js"></script>
 <script>
 if(window.history.replaceState){
