@@ -33,6 +33,9 @@ if(mysqli_num_rows($result) >= 1){
     </ul>
     <?php
   }
+} else if(mysqli_num_rows($result) == 0){
+  $resetAiQuery = "ALTER TABLE expense AUTO_INCREMENT = 1";
+  $resultAiQuery = mysqli_query($link, $resetAiQuery);
 }
 ?>
 <?php 
