@@ -19,11 +19,26 @@ if(mysqli_num_rows($result) >= 1){
           <span><?php echo "[$time]";?></span>
           <span><?php echo "[$date]";?></span>
         </div>
-        <button type="button" class="edit-button"><a href="update.php?id=<?php echo $id?>"><i class="fas fa-pen"></i></a></button>
-        <button type="button"><a href="delete.php?id=<?php echo $id?>"><i class="fas fa-times"></i></a></button>
+        <form class="income-edit-form" action="" method="post">
+          <input type="hidden" name="income-edit-hidden-id" id="income-edit-hidden-id" value="<?php echo $id ?>">
+          <input type="submit" name="income-edit-button" class="income-edit-submit-button" value="&#xf304;">
+        </form>
+        <form class="income-delete-form" action="" method="post">
+          <input type="hidden" name="income-delete-hidden-id" id="income-delete-hidden-id" value="<?php echo $id ?>">
+          <input type="submit" name="income-delete-button" class="income-delete-submit-button" value="&#xf00d;">
+        </form>
       </li>
     </ul>
     <?php
   }
+} else if(mysqli_num_rows($result) == 0){
+  $resetAiQuery = "ALTER TABLE income AUTO_INCREMENT = 1";
+  $resultAiQuery = mysqli_query($link, $resetAiQuery);
+}
+?>
+<?php
+if(isset($_POST["expense-delete-button"])){
+  $deleteId = $_POST["expense-delete-hidden-id"];
+  require("delete-expense.php");
 }
 ?>

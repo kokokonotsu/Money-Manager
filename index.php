@@ -69,29 +69,6 @@
           </div>
         </div>
       </div>
-  <!--<div id="edit-expense-modal" class="modal">
-        <div class="modal-content">
-          <div class="modal-header">
-            <i class="material-icons close" id="edit-expense-close">clear</i>
-            <h1>Edit Expense Form</h1>
-          </div>
-          <div class="modal-body">
-            <form action="" method="post">
-              <p class="modal-prompt">Edit Expense Title:</p>
-              <input type="text" name="edit-expense-title" id="edit-expense-title" value="$editExpenseTitle">
-              <p class="modal-prompt">Edit Expense Description:</p>
-              <input type="text" name="edit-expense-description" id="edit-expense-description" value="$editExpenseDescription">
-              <p class="modal-prompt">Edit Expense Total:</p>
-              <input type="text" name="edit-expense-total" id="edit-expense-total" value="$editExpenseTotal">
-              <p class="modal-prompt">Edit Expense Time:</p>
-              <input type="time" name="edit-expense-time" id="edit-expense-time" value="$editExpenseTime">
-              <p class="modal-prompt">Edit Expense Date:</p>
-              <input type="date" name="edit-expense-date" id="edit-expense-date" value="$editExpenseDate">
-              <input type="submit" name="edit-expense-submit" id="edit-expense-button" value="Edit Expense">
-            </form>
-          </div>
-        </div>
-      </div> -->
 <div class="edit-expense-modal-container">
 <?php 
 if(isset($_POST["expense-edit-button"])){
@@ -101,6 +78,17 @@ if(isset($_POST["expense-edit-button"])){
     require("edit-expense.php");
   }
 ?>
+</div>
+<div class="edit-income-modal-container">
+<?php
+if(isset($_POST["income-edit-button"])){
+  $editIncomeId = $_POST["edit-income-hidden-id"];
+  require("edit-income-form.php");
+  if(isset($_POST["edit-income-button"])){
+    require("edit-income.php");
+  }
+}
+?> 
 </div>
   <header>
     <h1>Money Manager</h1>

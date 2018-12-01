@@ -297,7 +297,7 @@ header h1{
     align-items: center;
     overflow: auto;
 }
-.edit-expense-modal-container{
+.edit-expense-modal-container, .edit-income-modal-container{
     position: absolute;
     top: 0;
     left: 0;

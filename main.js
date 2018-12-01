@@ -10,7 +10,8 @@ var balanceClose = document.getElementById("balance-close");
 var allExpenseEditButtons = document.getElementsByClassName("expense-edit-submit-button");
 var editExpenseModal = document.getElementById("edit-expense-modal");
 var editExpenseClose = document.getElementById("edit-expense-close");
-var editExpenseTitle = document.getElementById("edit-expense-title");
+var editIncomeModal = document.getElementById("edit-income-modal");
+var editIncomeClose = document.getElementById("edit-income-close");
 // var balance = document.getElementById("balance");
 // var incomeButton = document.getElementById("income-submit-button");
 // var expenseButton = document.getElementById("expense-submit-button");
@@ -45,5 +46,9 @@ window.addEventListener("click", (event) => { if(event.target == balanceModal){ 
 if(editExpenseClose){
     editExpenseClose.addEventListener("click", () => {editExpenseModal.style.display = "none"; });
 }
+if(editIncomeClose){
+    editIncomeClose.addEventListener("click", () => {editIncomeModal.style.display = "none"; });
+}
 //Add Event Listener for whenever user clicks outside of the modal content to close modal
 window.addEventListener("click", (event) => { if(event.target == editExpenseModal){ editExpenseModal.style.display = "none"; }; });
+window.addEventListener("click", (event) => { if(event.target == editIncomeModal){ editIncomeModal.style.display = "none"; }; });
