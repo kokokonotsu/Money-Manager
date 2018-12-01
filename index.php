@@ -84,7 +84,7 @@ if(isset($_POST["expense-edit-button"])){
 if(isset($_POST["income-edit-button"])){
   $editIncomeId = $_POST["income-edit-hidden-id"];
   require("edit-income-form.php");
-  if(isset($_POST["edit-income-button"])){
+  if(isset($_POST["edit-income-submit"])){
     require("edit-income.php");
   }
 }
