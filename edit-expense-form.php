@@ -9,7 +9,8 @@
             $editExpenseTime = $row["expenseTime"];
             $editExpenseDate = $row["expenseDate"];
             $editExpenseTotal = $row["expenseTotal"];
-            echo '<div class="modal-content">
+            echo '<div id="edit-expense-modal" class="modal">
+            <div class="modal-content">
             <div class="modal-header">
               <i class="material-icons close" id="edit-expense-close">clear</i>
               <h1>Edit Expense Form</h1>
@@ -17,15 +18,15 @@
             <div class="modal-body">
               <form action="" method="post">
                 <p class="modal-prompt">Edit Expense Title:</p>
-                <input type="text" name="edit-expense-title" id="edit-expense-title" value="$editExpenseTitle">
+                <input type="text" name="edit-expense-title" id="edit-expense-title" value=' . $editExpenseTitle . '>
                 <p class="modal-prompt">Edit Expense Description:</p>
-                <input type="text" name="edit-expense-description" id="edit-expense-description" value="$editExpenseDescription">
+                <input type="text" name="edit-expense-description" id="edit-expense-description" value=' . $editExpenseDescription . '>
                 <p class="modal-prompt">Edit Expense Total:</p>
-                <input type="text" name="edit-expense-total" id="edit-expense-total" value="$editExpenseTotal">
+                <input type="text" name="edit-expense-total" id="edit-expense-total" value=' . $editExpenseTotal . '>
                 <p class="modal-prompt">Edit Expense Time:</p>
-                <input type="time" name="edit-expense-time" id="edit-expense-time" value="$editExpenseTime">
+                <input type="time" name="edit-expense-time" id="edit-expense-time" value=' . $editExpenseTime . '>
                 <p class="modal-prompt">Edit Expense Date:</p>
-                <input type="date" name="edit-expense-date" id="edit-expense-date" value="$editExpenseDate">
+                <input type="date" name="edit-expense-date" id="edit-expense-date" value=' . $editExpenseDate . '>
                 <input type="submit" name="edit-expense-submit" id="edit-expense-button" value="Edit Expense">
               </form>
             </div>
