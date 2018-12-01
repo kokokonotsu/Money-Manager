@@ -90,6 +90,8 @@ header h1{
 }
 .main-container .main-title{
     margin: 0;
+    position: sticky;
+    top: 0;
 }
 .main-button-container{
     grid-area: buttons;
@@ -187,18 +189,22 @@ header h1{
     color: #FFB000;
     cursor: pointer;
 }
-.main-container ul, .main-done ul{
+.main-container ul{
     list-style-type: none;
     padding-inline-start: 0;
+    margin-block-start: 0.5em;
+    margin-block-end: 0;
 }
 .li-invoice{
     box-sizing: border-box;
-    font-size: 1.8rem;
+    font-size: 2.5vw;
     padding: 4px 1px 4px 4px;
     border: 1px solid #32CD32;
     display: flex;
+    justify-content: center;
     align-items: center;
     margin: 0 5px;
+    min-width: 30vw;
 }
 .li-invoice a{
     color: #32CD32;
@@ -210,11 +216,12 @@ header h1{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 1.8rem;
+    font-size: 2.5vw;
+    padding-inline-start: 0.1em;
+    padding-inline-end: 0.1em;
 }
 .li-invoice .li-invoice-span-div{
     display: inline-flex;
-    align-items: center;
 }
 .li-invoice .task-title{
     margin-right: 5px;
@@ -268,7 +275,7 @@ header h1{
     grid-area: income;
 }
 .main-expense form input[type="submit"], .main-income form input[type="submit"]{
-    font-size: 1rem;
+    font-size: 1.5vw;
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     padding: 2px 3px;
@@ -335,6 +342,9 @@ header h1{
     padding: 0;
     border: 1px solid #32CD32;
     width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     animation: animate-modal 0.4s;
 }
 /* Modal Header */
@@ -347,6 +357,16 @@ header h1{
 /* Modal Body*/
 .modal-body{
     font-size: 2rem;
+}
+.modal-body form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 1vh 0;
+}
+.modal-body form input, .modal-body form p{
+    margin-block-start: 1vh;
 }
 .modal-body form input{
     font-size: 2rem;
@@ -432,7 +452,7 @@ footer a:hover{
         top: 0; opacity: 1;
     }
 }
-@media screen and (max-width: 500px){
+@media screen and (max-width: 750px){
 .grid-index{
     /* grid-template:
     "header" 10%
@@ -463,5 +483,21 @@ footer a:hover{
     background-color: black;
     max-width: 80vw;
     margin: 5px;
+}
+.li-invoice{
+    min-width: 80vw;
+    font-size: 5vw;
+}
+.li-invoice span{
+    font-size: 5vw;
+}
+.modal-body form p, .modal-body input{
+margin-block-start: 2vh;
+}
+.modal-header h1{
+    font-size: 8vw;
+}
+.modal-header i{
+    font-size: 7vw;
 }
 }
