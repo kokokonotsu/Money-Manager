@@ -74,20 +74,20 @@
 if(isset($_POST["expense-edit-button"])){
   $editId = $_POST["expense-edit-hidden-id"];
   require("edit-expense-form.php");}
-  if(isset($_POST["edit-expense-submit"])){
-    require("edit-expense.php");
-  }
+if(isset($_POST["edit-expense-submit"])){
+  require("edit-expense.php");
+}
 ?>
 </div>
 <div class="edit-income-modal-container">
 <?php
 if(isset($_POST["income-edit-button"])){
   $editIncomeId = $_POST["income-edit-hidden-id"];
-  require("edit-income-form.php");
-  if(isset($_POST["edit-income-submit"])){
-    require("edit-income.php");
-  }
+  require("edit-income-form.php");}
+if(isset($_POST["edit-income-submit"])){
+  require("edit-income.php");
 }
+
 ?> 
 </div>
   <header>
