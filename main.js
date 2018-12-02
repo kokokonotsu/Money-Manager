@@ -12,6 +12,8 @@ var editExpenseModal = document.getElementById("edit-expense-modal");
 var editExpenseClose = document.getElementById("edit-expense-close");
 var editIncomeModal = document.getElementById("edit-income-modal");
 var editIncomeClose = document.getElementById("edit-income-close");
+var detailModal = document.getElementById("detail-modal");
+var detailClose = document.getElementById("detail-close");
 // var balance = document.getElementById("balance");
 // var incomeButton = document.getElementById("income-submit-button");
 // var expenseButton = document.getElementById("expense-submit-button");
@@ -49,6 +51,10 @@ if(editExpenseClose){
 if(editIncomeClose){
     editIncomeClose.addEventListener("click", () => {editIncomeModal.style.display = "none"; });
 }
+if(detailClose){
+    detailClose.addEventListener("click", () => { detailModal.style.display = "none"; });
+}
 //Add Event Listener for whenever user clicks outside of the modal content to close modal
 window.addEventListener("click", (event) => { if(event.target == editExpenseModal){ editExpenseModal.style.display = "none"; }; });
 window.addEventListener("click", (event) => { if(event.target == editIncomeModal){ editIncomeModal.style.display = "none"; }; });
+window.addEventListener("click", (event) => { if(event.target == detailModal){ detailModal.style.display = "none"; }; });
