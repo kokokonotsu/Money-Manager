@@ -239,6 +239,16 @@ header h1{
     display: inline;
     margin: 0 3px;
 }
+.main-container input[class="list-item-title-button"]{
+    border: none;
+    display: inline;
+    font-size: 2.5vw;
+    padding: 2px 3px;
+    margin: 0 3px;
+}
+.main-container input[class="list-item-title-button"]:hover{
+    text-decoration: underline;
+}
 .done{
     color: #FFB000;
     border-color: #FFB000;
@@ -274,9 +284,17 @@ header h1{
 .main-income{
     grid-area: income;
 }
-.main-expense form input[type="submit"], .main-income form input[type="submit"]{
+.main-expense form input[class="expense-edit-submit-button"],
+.main-expense form input[class="expense-delete-submit-button"]{
     font-size: 1.5vw;
-    font-family: "Font Awesome 5 Free";
+    font-family: "Font Awesome 5 Free", "px-vga";
+    font-weight: 900;
+    padding: 2px 3px;
+    margin: 0 3px;
+}
+.main-income form input[type="submit"]{
+    font-size: 1.5vw;
+    font-family: "Font Awesome 5 Free", "px-vga";
     font-weight: 900;
     padding: 2px 3px;
     margin: 0 3px;
@@ -322,7 +340,7 @@ header h1{
     background-color: black; /* fallback color in case browser does not support opacity hexes*/
     background-color: #00000066; /* black with opacity */
 }
-.expense-modal, .income-modal{
+.expense-modal, .income-modal, .detail-modal{
     display: block; /* hidden by default */
     position: fixed;
     z-index: 1;
@@ -333,6 +351,15 @@ header h1{
     overflow: auto;
     background-color: black; /* fallback color in case browser does not support opacity hexes*/
     background-color: #00000066; /* black with opacity */
+}
+.expense-detail{
+    box-sizing: border-box;
+}
+.detail-modal p, .detail-modal .expense-detail-value{
+    display: inline;
+}
+.expense-detail-value{
+    border: 1px solid #32CD32;
 }
 /* Modal Content */
 .modal-content{
@@ -489,6 +516,9 @@ footer a:hover{
     font-size: 5vw;
 }
 .li-invoice span{
+    font-size: 5vw;
+}
+.main-expense form input[type="submit"].list-item-title-button{
     font-size: 5vw;
 }
 .modal-body form p, .modal-body form input{
