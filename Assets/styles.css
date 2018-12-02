@@ -354,12 +354,15 @@ header h1{
 }
 .expense-detail{
     box-sizing: border-box;
+    margin-block-start: 1vh;
+    margin-block-end: 1vh;
 }
 .detail-modal p, .detail-modal .expense-detail-value{
     display: inline;
 }
 .expense-detail-value{
     border: 1px solid #32CD32;
+    padding: 3px;
 }
 /* Modal Content */
 .modal-content{
