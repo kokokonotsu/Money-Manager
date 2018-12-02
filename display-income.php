@@ -37,8 +37,8 @@ if(mysqli_num_rows($result) >= 1){
 }
 ?>
 <?php
-if(isset($_POST["expense-delete-button"])){
-  $deleteId = $_POST["expense-delete-hidden-id"];
-  require("delete-expense.php");
+if(isset($_POST["income-delete-button"])){
+  $deleteId = $_POST["income-delete-hidden-id"];
+  require("delete-income.php");
 }
 ?>
