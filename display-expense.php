@@ -15,7 +15,10 @@ if(mysqli_num_rows($result) >= 1){
     ?>
     <ul>
       <li class="li-invoice">
-        <a href="detail.php?id=<?php echo $id?>" class="task-title"><?php echo "$title"?></a>
+        <form action="" class="list-item-title-form" method="post">
+          <input type="hidden" name="expense-detail-hidden-id" id="expense-detail-hidden-id" value="<?php echo $id ?>">
+          <input type="submit" class="list-item-title-button" name="expense-detail-submit" id="expense-detail-submit-button" value="<?php echo "$title"?>">
+        </form>
         <div class="li-invoice-span-div">
           <span><?php echo "\$$expense";?></span>
           <span><?php echo "[$time]";?></span>
