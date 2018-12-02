@@ -18,6 +18,13 @@
     <?php require("add-income.php"); ?>
     <?php require("set-balance.php"); ?>
   </div>
+  <div class="detail-modal-container">
+    <?php if(isset($_POST["expense-detail-submit"])){
+      $detailId = $_POST["expense-detail-hidden-id"];
+      require("detail-expense.php");
+    }
+    ?>
+  </div>
   <div id="expense-modal" class="modal">
     <div class="modal-content">
       <div class="modal-header">
