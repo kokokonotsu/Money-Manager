@@ -13,7 +13,7 @@ if(mysqli_num_rows($result) >= 1){
     $date = $row["expenseDate"];
     $expense = $row["expenseTotal"];
     ?>
-    <ul>
+    <ul class="expense-ul">
       <li class="li-invoice">
         <form class="list-item-title-form" action="" method="post">
           <input type="hidden" name="expense-detail-hidden-id" id="expense-detail-hidden-id" value="<?php echo $id ?>">

@@ -12,7 +12,7 @@ if(mysqli_num_rows($result) >= 1){
     $time = $row["incomeTime"];
     $date = $row["incomeDate"];
     ?>
-    <ul>
+    <ul class="income-ul">
       <li class="li-invoice">
         <div class="li-invoice-span-div">
           <span><?php echo "\$$income";?></span>
