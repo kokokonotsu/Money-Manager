@@ -19,15 +19,17 @@ if(mysqli_num_rows($result) >= 1){
           <span><?php echo "[$time]";?></span>
           <span><?php echo "[$date]";?></span>
         </div>
-        <form class="income-edit-form" action="" method="post">
-          <input type="hidden" name="income-edit-hidden-id" id="income-edit-hidden-id" value="<?php echo $incomeId ?>">
-          <input type="submit" name="income-edit-button" class="income-edit-submit-button" value="&#xf304;">
-        </form>
-        <form class="income-delete-form" action="" method="post">
-          <input type="hidden" name="income-delete-hidden-id" id="income-delete-hidden-id" value="<?php echo $incomeId ?>">
-          <input type="submit" name="income-delete-button" class="income-delete-submit-button" value="&#xf00d;">
-        </form>
-      </li>
+        </li>
+        <div class="ul-form-container">
+          <form class="income-edit-form" action="" method="post">
+            <input type="hidden" name="income-edit-hidden-id" id="income-edit-hidden-id" value="<?php echo $incomeId ?>">
+            <input type="submit" name="income-edit-button" class="income-edit-submit-button" value="&#xf304;">
+          </form>
+          <form class="income-delete-form" action="" method="post">
+            <input type="hidden" name="income-delete-hidden-id" id="income-delete-hidden-id" value="<?php echo $incomeId ?>">
+            <input type="submit" name="income-delete-button" class="income-delete-submit-button" value="&#xf00d;">
+          </form>
+        </div>
     </ul>
     <?php
   }

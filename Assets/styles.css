@@ -189,22 +189,39 @@ header h1{
     color: #FFB000;
     cursor: pointer;
 }
-.main-container ul{
+.expense-ul, .income-ul{
     list-style-type: none;
     padding-inline-start: 0;
     margin-block-start: 0.5em;
     margin-block-end: 0;
+    width: 97%;
+    display: flex;
+    justify-content: stretch;
+}
+.expense-ul:hover .expense-edit-form, .expense-ul:hover .expense-delete-form{
+    visibility: visible;
+}
+.income-ul:hover .income-edit-form, .income-ul:hover .income-delete-form{
+    visibility: visible;
+}
+.ul-form-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: auto;
 }
 .li-invoice{
     box-sizing: border-box;
     font-size: 2.5vw;
-    padding: 4px 1px 4px 4px;
+    padding: 2.5px 1px 2.5px 4px;
     border: 1px solid #32CD32;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 5px;
-    min-width: 30vw;
+    display: inline-flex;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+.income-ul .li-invoice{
+    justify-content: flex-end;
 }
 .li-invoice a{
     color: #32CD32;
@@ -239,12 +256,16 @@ header h1{
     display: inline;
     margin: 0 3px;
 }
+.expense-edit-form, .expense-delete-form, .income-edit-form, .income-delete-form{
+    display: inline-block;
+    visibility: hidden;
+}
 .main-container input[class="list-item-title-button"]{
     border: none;
     display: inline;
     font-size: 2.5vw;
-    padding: 2px 3px;
-    margin: 0 3px;
+    margin: 0;
+    justify-self: flex-start;
 }
 .main-container input[class="list-item-title-button"]:hover{
     text-decoration: underline;
@@ -278,9 +299,6 @@ header h1{
 .main-expense{
     grid-area: expense;
 }
-.expense-edit-form, .expense-delete-form{
-    display: inline-block;
-}
 .main-income{
     grid-area: income;
 }
@@ -290,7 +308,7 @@ header h1{
     font-family: "Font Awesome 5 Free", "px-vga";
     font-weight: 900;
     padding: 2px 3px;
-    margin: 0 3px;
+    margin: 0 0 0 4px;
 }
 .main-income form input[type="submit"]{
     font-size: 1.5vw;

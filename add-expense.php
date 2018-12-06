@@ -8,6 +8,14 @@
     if(empty($expenseTotal)){
       $expenseTotal = 0;
     }
+    function check($string){
+      $string  = htmlspecialchars($string);
+        $string = strip_tags($string);
+        $string = trim($string);
+        $string = stripslashes($string);
+        return $string;
+    }
+    check($expenseTitle);
     db();
     global $link;
     $query_expense = "INSERT INTO expense(expenseTitle, expenseDescription, expenseTime, expenseDate, expenseTotal) VALUES('$expenseTitle', '$expenseDescription', '$expenseTime', '$expenseDate', '$expenseTotal')";

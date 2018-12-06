@@ -24,7 +24,9 @@ if(mysqli_num_rows($result) >= 1){
           <span><?php echo "[$time]";?></span>
           <span><?php echo "[$date]";?></span>
         </div> 
-        <form class="expense-edit-form" action="" method="post">
+      </li>
+      <div class="ul-form-container">
+      <form class="expense-edit-form" action="" method="post">
           <input type="hidden" name="expense-edit-hidden-id" id="expense-edit-hidden-id" value="<?php echo $id ?>">
           <input type="submit" name="expense-edit-button" class="expense-edit-submit-button" value="&#xf304;">
         </form>
@@ -32,7 +34,7 @@ if(mysqli_num_rows($result) >= 1){
           <input type="hidden" name="expense-delete-hidden-id" id="expense-delete-hidden-id" value="<?php echo $id ?>">
           <input type="submit" name="expense-delete-button" class="expense-delete-submit-button" value="&#xf00d;">
         </form>
-      </li>
+      </div>
     </ul>
     <?php
   }
