@@ -14,6 +14,7 @@ var editIncomeModal = document.getElementById("edit-income-modal");
 var editIncomeClose = document.getElementById("edit-income-close");
 var detailModal = document.getElementById("detail-modal");
 var detailClose = document.getElementById("detail-close");
+var mainContainers = document.getElementsByClassName("main-container");
 // var balance = document.getElementById("balance");
 // var incomeButton = document.getElementById("income-submit-button");
 // var expenseButton = document.getElementById("expense-submit-button");
@@ -58,3 +59,6 @@ if(detailClose){
 window.addEventListener("click", (event) => { if(event.target == editExpenseModal){ editExpenseModal.style.display = "none"; }; });
 window.addEventListener("click", (event) => { if(event.target == editIncomeModal){ editIncomeModal.style.display = "none"; }; });
 window.addEventListener("click", (event) => { if(event.target == detailModal){ detailModal.style.display = "none"; }; });
+window.setTimeout(() => {console.log(mainContainers[0].style.height.value)}, 1100);
+//Decompress Main-Container
+window.addEventListener("load", () => {(window.setTimeout(() => { for(let i = 0; i < mainContainers.length; i++){ mainContainers[i].style.opacity = "1"; }; }, 1000))});
